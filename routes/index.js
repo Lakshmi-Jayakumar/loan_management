@@ -1,9 +1,9 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const LoanManagement = require('../services/LoanManagement');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+/* GET loan API. */
+router.post('/loan/create', LoanManagement.create);
+
 
 module.exports = router;
